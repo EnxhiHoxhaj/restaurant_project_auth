@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Restaurant extends Model
 {
-    use HasFactory;
+    // Specifica le colonne "riempibili"
+    protected $fillable = [
+        'name',
+        'email',
+        'address',
+        'phone',
+        'piva',
+        'logo',
+    ];
 }
