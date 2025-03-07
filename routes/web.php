@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\RestaurantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,8 @@ Route::get('/chi-siamo', function () {
 Route::get('/contatti', function () {
     return view('contacts');
 })->name('contacts');
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    // Rotta per visualizzare l'indice dei ristoranti (utenti)
+    Route::get('/restaurants', [RestaurantController::class, 'index'])->name('restaurants.index');
+});

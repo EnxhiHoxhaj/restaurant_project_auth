@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Modell\Restaurant;
+use App\Models\User;
 
 class RestaurantController extends Controller
 {
@@ -13,8 +14,13 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        //
+        // Estrai tutti gli utenti
+        $users = User::all();
+
+        // Passiamo gli utenti alla vista 'restaurant.index'
+        return view('restaurant.index', compact('users'));
     }
+
 
     /**
      * Show the form for creating a new resource.
