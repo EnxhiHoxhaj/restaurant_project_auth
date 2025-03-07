@@ -11,12 +11,24 @@
 
 <body>
 
-    <h1>Elenco Utenti</h1>
+
+    <h1>Elenco Ristoranti</h1>
+
+
+
 
     <ul>
-        @foreach ($users as $user)
+        @foreach ($restaurants as $restaurant)
             <li>
-                <strong>{{ $user->name }}</strong> - {{ $user->email }}
+                <strong>{{ $restaurant->name }}</strong> - {{ $restaurant->email }}
+                <a href="{{ route('admin.restaurants.show', $restaurant->id) }}">Dettagli</a>
+                <a href="{{ route('admin.restaurants.edit', $restaurant->id) }}">Modifica</a>
+                <form action="{{ route('admin.restaurants.destroy', $restaurant->id) }}" method="POST"
+                    style="display:inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Elimina</button>
+                </form>
             </li>
         @endforeach
     </ul>
