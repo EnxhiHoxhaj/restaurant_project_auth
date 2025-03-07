@@ -15,7 +15,7 @@
 <body>
 
     @include('partials.navbar')
-
+    @include('partials.sidebar')
     {{-- @yield('hero') --}}
 
     @yield('content')
