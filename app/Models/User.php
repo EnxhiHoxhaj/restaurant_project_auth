@@ -19,6 +19,7 @@ class User extends Authenticatable
     public $timestamps = false;
 
     protected $fillable = [
+        'restaurant_id',
         'name',
         'email',
         'password',
@@ -33,4 +34,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    // Relazione con il ristorante (un utente appartiene a un ristorante)
+    public function restaurant()
+    {
+        return $this->belongsTo(Restaurant::class, 'restaurant_id');
+    }
 }
