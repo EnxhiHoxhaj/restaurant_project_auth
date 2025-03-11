@@ -1,9 +1,9 @@
 @php
-    $sidebar = config('aside.side_bar'); // Assicurati che il file config/aside.php esista e contenga 'side_bar'
+    $sidebar = config('aside.side_bar');
 @endphp
 
-<nav class="navbar-dark bg-dark  px-3 px-xxl-4 overflow-auto d-flex">
-    <menu class="navbar-nav h-100 mt-3">
+<nav class="navbar-dark bg-dark px-3 px-xxl-4 d-flex sidebar-conatiner">
+    <menu class="navbar-nav mt-3">
         @foreach ($sidebar as $link)
             <li>
                 <a href="{{ isset($link['route_name']) ? route($link['route_name']) : '#' }}"

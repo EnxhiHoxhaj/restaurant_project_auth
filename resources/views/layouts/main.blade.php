@@ -16,15 +16,20 @@
 
     {{-- Includiamo gli assets con la direttiva @vite --}}
     @vite('resources/js/app.js')
+
+    {{-- inclusione  --}}
+    <link rel="stylesheet"
+        href="C:/Users/elona/OneDrive/Desktop/PROGETTI PERSONALI\/estaurant_project_auth/resources/scss/app.scss">
 </head>
 
 <body>
     <section class="d-flex">
         <div>
+            @include('partials.navbar')
             @include('partials.sidebar')
         </div>
         <div>
-            @include('partials.navbar')
+
             @yield('content')
             @include('partials.footer')
         </div>
