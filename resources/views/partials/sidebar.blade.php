@@ -2,7 +2,7 @@
     $sidebar = config('aside.side_bar'); // Assicurati che il file config/aside.php esista e contenga 'side_bar'
 @endphp
 
-<nav class="navbar-dark bg-dark h-100 px-3 px-xxl-4 overflow-auto">
+<nav class="navbar-dark bg-dark  px-3 px-xxl-4 overflow-auto d-flex">
     <menu class="navbar-nav h-100 mt-3">
         @foreach ($sidebar as $link)
             <li>

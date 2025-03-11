@@ -19,15 +19,18 @@
 </head>
 
 <body>
+    <section class="d-flex">
+        <div>
+            @include('partials.sidebar')
+        </div>
+        <div>
+            @include('partials.navbar')
+            @yield('content')
+            @include('partials.footer')
+        </div>
 
-    @include('partials.navbar')
-    @include('partials.sidebar')
-    {{-- @yield('hero') --}}
-
-    @yield('content')
-
-    @include('partials.footer')
-
+        {{-- @yield('hero') --}}
+    </section>
 </body>
 
 </html>
